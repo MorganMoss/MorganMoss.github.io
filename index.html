@@ -31,6 +31,9 @@
         #body-heading {
             opacity: 0;
             transform: translateX(-50px);
+        }
+
+        #body-heading.animate {
             animation: slideIn 1s ease-out forwards;
         }
 
@@ -95,10 +98,130 @@
         .span-2 {
             grid-column: span 2;
         }
+
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--body-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
+        }
+
+        #loading-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #loading-text {
+            font-size: large;
+            font-family: 'Courier New';
+            color: var(--text-color);
+        }
+
+        #loading-text.animate {
+            animation: slideIn 1s ease-out forwards;
+        }
+
+        #progress-bar-container {
+            margin-top: 2rem;
+            width: 100%;
+            height: 8px;
+            background-color: rgba(219, 130, 53, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        #progress-bar {
+            height: 100%;
+            background-color: #DB8235;
+            width: 0%;
+            transition: width 0.3s ease-out;
+            border-radius: 4px;
+        }
+
+        .loading-content {
+            display: inline-block;
+            width: fit-content;
+        }
+
+        #fullscreen-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-out;
+        }
+
+        #fullscreen-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        #fullscreen-modal img {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 0;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: var(--text-color);
+            cursor: pointer;
+            z-index: 10001;
+        }
+
+        .close-button:hover {
+            color: var(--primary-color);
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(to bottom, transparent 0%, transparent 20%, rgba(36, 37, 45, 0.05) 35%, rgba(36, 37, 45, 0.15) 50%, rgba(36, 37, 45, 0.35) 65%, rgba(36, 37, 45, 0.6) 80%, var(--body-color) 100%);
+            pointer-events: none;
+            z-index: 100;
+            mix-blend-mode: multiply;
+        }
     </style>
 </head>
 
 <body>
+    <div id="loading-screen">
+        <div class="loading-content">
+            <h1 id="loading-text">Wait a moment for it to load</h1>
+            <div id="progress-bar-container">
+                <div id="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="fullscreen-modal">
+        <span class="close-button">&times;</span>
+        <img id="fullscreen-img" src="" alt="">
+    </div>
+
     <section id="header">
         <div id="header-left">
             <a id="header-logo" href="https://raveressmoss.wixsite.com/portfolio" target="_self">
@@ -132,26 +255,97 @@
         </h1>
 
         <script>
+            const startTime = Date.now();
+            
             fetch("https://api.github.com/repos/MorganMoss/MorganMoss.github.io/contents/art")
                 .then(r => r.json())
                 .then(files => {
                     const container = document.getElementById("body-portfolio");
-                    files
-                        .filter(f => /\.(png|jpe?g|webp|gif)$/i.test(f.name))
-                        .forEach(f => {
+                    const imageFiles = files.filter(f => /\.(png|jpe?g|webp|gif)$/i.test(f.name));
+                    let loadedCount = 0;
+                    
+                    // Create image elements and load them
+                    const imagePromises = imageFiles.map(f => {
+                        return new Promise((resolve) => {
                             const img = document.createElement("img");
                             img.src = f.download_url;
-
-                            // When image loads, check aspect ratio
+                            
+                            const updateProgress = () => {
+                                loadedCount++;
+                                const progress = (loadedCount / imageFiles.length) * 100;
+                                document.getElementById("progress-bar").style.width = progress + "%";
+                            };
+                            
                             img.onload = () => {
                                 if (img.naturalWidth > img.naturalHeight) {
                                     img.classList.add("span-2");
                                 }
-                            }
-
+                                updateProgress();
+                                resolve(img);
+                            };
+                            
+                            img.onerror = () => {
+                                updateProgress();
+                                resolve(img);
+                            };
+                        });
+                    });
+                    
+                    // Wait for all images to load
+                    Promise.all(imagePromises).then(images => {
+                        // Add all images to the container at once
+                        images.forEach(img => {
+                            // Add click handler for fullscreen
+                            img.addEventListener('click', function() {
+                                const modal = document.getElementById('fullscreen-modal');
+                                const fullscreenImg = document.getElementById('fullscreen-img');
+                                fullscreenImg.src = this.src;
+                                modal.classList.add('active');
+                            });
+                            img.style.cursor = 'pointer';
                             container.appendChild(img);
                         });
+                        
+                        // Ensure minimum 2 seconds of loading screen
+                        const elapsedTime = Date.now() - startTime;
+                        const remainingTime = Math.max(0, 2000 - elapsedTime);
+                        
+                        setTimeout(() => {
+                            // Trigger animation on loading text
+                            const loadingText = document.getElementById("loading-text");
+                            loadingText.classList.add("animate");
+                            
+                            // Trigger animation on body heading
+                            const bodyHeading = document.getElementById("body-heading");
+                            bodyHeading.classList.add("animate");
+                            
+                            // Hide loading screen
+                            const loadingScreen = document.getElementById("loading-screen");
+                            loadingScreen.classList.add("hidden");
+                        }, remainingTime);
+                    });
                 });
+            
+            // Fullscreen modal close functionality
+            const modal = document.getElementById('fullscreen-modal');
+            const closeButton = document.querySelector('.close-button');
+            
+            closeButton.addEventListener('click', function() {
+                modal.classList.remove('active');
+            });
+            
+            modal.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+            
+            // Close on ESC key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    modal.classList.remove('active');
+                }
+            });
         </script>
         <div id="body-portfolio">
 
