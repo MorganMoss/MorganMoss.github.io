@@ -50,7 +50,21 @@
             align-items: center;
             background-color: var(--header-color);
             padding: 1rem;
-            border-bottom: 0.5rem solid #DB8235;
+            border-bottom: 0.3rem solid var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        #footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--header-color);
+            padding: 1rem;
+            border-top: 0.3rem solid var(--primary-color);
+            z-index: 1000;
+
         }
 
         #header-left {
@@ -140,12 +154,19 @@
 
         #progress-bar {
             height: 100%;
-            background-color: #DB8235;
+            background-color: var(--primary-color);
             width: 0%;
             transition: width 0.3s ease-out;
             border-radius: 4px;
         }
 
+        #progress-text {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            text-align: center;
+            color: var(--text-color);
+            font-family: 'Courier New';
+        }
         .loading-content {
             display: inline-block;
             width: fit-content;
@@ -192,7 +213,7 @@
             color: var(--primary-color);
         }
 
-        body::after {
+        .body::after {
             content: '';
             position: fixed;
             bottom: 0;
@@ -214,6 +235,7 @@
             <div id="progress-bar-container">
                 <div id="progress-bar"></div>
             </div>
+            <div id="progress-text">0/0 loaded</div>
         </div>
     </div>
 
@@ -230,7 +252,7 @@
             </a>
             <div id="header-title">
                 <span>RAVERESS</span><span style="color:var(--primary-color); font-weight:bold;">_MOSS</span> </p>
-                <p>Furry Artist</p>
+                <p>Artist and Software Engineer</p>
             </div>
         </div>
         <div id="header-right">
@@ -245,6 +267,11 @@
 
                 <a href="https://www.tiktok.com/@raveress_moss"><span>tiktok: </span><span
                         style="color: var(--primary-color);">@Raveress_Moss</span></a>
+            </p>
+            <p>
+
+                <a href="https://www.linkedin.com/in/morgan-moss-614a9a19a/"><span>linkedin: </span><span
+                        style="color: var(--primary-color);">Morgan Moss</span></a>
             </p>
         </div>
     </section>
@@ -263,6 +290,9 @@
                     const container = document.getElementById("body-portfolio");
                     const imageFiles = files.filter(f => /\.(png|jpe?g|webp|gif)$/i.test(f.name));
                     let loadedCount = 0;
+                    const total = imageFiles.length;
+                    const progressTextEl = document.getElementById("progress-text");
+                    if (progressTextEl) progressTextEl.textContent = `${loadedCount}/${total} loaded`;
                     
                     // Create image elements and load them
                     const imagePromises = imageFiles.map(f => {
@@ -272,8 +302,9 @@
                             
                             const updateProgress = () => {
                                 loadedCount++;
-                                const progress = (loadedCount / imageFiles.length) * 100;
+                                const progress = total ? (loadedCount / total) * 100 : 100;
                                 document.getElementById("progress-bar").style.width = progress + "%";
+                                if (progressTextEl) progressTextEl.textContent = `${loadedCount}/${total} loaded`;
                             };
                             
                             img.onload = () => {
@@ -350,6 +381,10 @@
         <div id="body-portfolio">
 
         </div>
+    </section>
+ 
+    <section id="footer">
+        <p>You got to the end, thanks for checking out my art!</p>
     </section>
 </body>
 
