@@ -173,6 +173,8 @@
             margin-bottom: 0.4rem;
         }
 
+        /* ---------------- SKILLS ---------------- */
+
         .skills {
             display: flex;
             flex-wrap: wrap;
@@ -191,6 +193,7 @@
             text-decoration: none;
         }
 
+        /* ---------------- GALLERY ---------------- */
         .gallery-wrapper {
             position: relative;
         }
@@ -275,6 +278,43 @@
             display: block;
         }
 
+        /* ---------------- HEADER ---------------- */
+
+        .header {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact {
+            margin-top: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        /* ---------------- IMPACT STRIP ---------------- */
+
+        .impact {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 18px 0 28px;
+        }
+
+        .impact div {
+            border: 1px solid var(--border);
+            padding: 12px;
+            border-radius: 10px;
+        }
+
+        .impact strong {
+            display: block;
+            font-size: 1.1rem;
+        }
+
+        .impact span {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        /* ---------------- PRINT ---------------- */
         @media print {
             body {
                 font-size: 10.5pt;
@@ -381,7 +421,20 @@
                 </div>
             </div>
         </header>
-
+        <section class="impact">
+            <div>
+                <strong>Enterprise Systems</strong>
+                <span>production-scale backend + platform work</span>
+            </div>
+            <div>
+                <strong>Full Stack</strong>
+                <span>web, mobile, and backend systems</span>
+            </div>
+            <div>
+                <strong>Distributed Architecture</strong>
+                <span>queues, APIs, data systems</span>
+            </div>
+        </section>
         <section>
             <h2>Profile</h2>
 
