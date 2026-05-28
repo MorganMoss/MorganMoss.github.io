@@ -40,7 +40,7 @@
             display: flex;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
-            height: 30vh;
+            height: 80rem;
         }
 
         .slide {
@@ -405,34 +405,25 @@
 
         <header class="header">
             <h1>Morgan Moss</h1>
-
-            <p>
-                Software Engineer • Systems Architecture • Full Stack Development
-            </p>
+            <p>Software Engineer • Systems Architecture • Full Stack Development</p>
 
             <div class="contact">
-                <div>Cape Town, South Africa</div>
-                <div>Phone: +27 71 869 1665</div>
-                <div>Email: morganpetermoss@gmail.com</div>
-                <div>Website:
-                    <a href="https://morganmoss.github.io/">
-                        morganmoss.github.io
-                    </a>
-                </div>
+                Cape Town, South Africa • morganpetermoss@gmail.com • +27 71 869 1665
             </div>
         </header>
+
         <section class="impact">
             <div>
                 <strong>Enterprise Systems</strong>
-                <span>production-scale backend + platform work</span>
+                <span>Production systems in government and logistics environments</span>
             </div>
             <div>
-                <strong>Full Stack</strong>
-                <span>web, mobile, and backend systems</span>
+                <strong>Full Stack Delivery</strong>
+                <span>Backend APIs, frontend systems, and mobile applications</span>
             </div>
             <div>
-                <strong>Distributed Architecture</strong>
-                <span>queues, APIs, data systems</span>
+                <strong>Platform Engineering</strong>
+                <span>Reusable components, shared services, and internal tooling</span>
             </div>
         </section>
         <section>
@@ -543,7 +534,6 @@
                 </ul>
             </article>
         </section>
-
         <section id="projects">
             <h2>Projects</h2>
 
@@ -552,114 +542,164 @@
 
                 <div class="gallery">
 
+                    <!-- TFN NETWORK -->
                     <section class="slide">
                         <div class="slide-caption">
-                            <h3>TFN Network</h3>
+                            <h3>TFN Network (Logistics Platform)</h3>
                             <p>
-                                Fuel logistics platform connecting depots and trucking operations across a distributed
-                                network.
-                                Built and maintained full-stack components across web and mobile systems using C#,
-                                ASP.NET,
-                                Flutter, JavaScript, and SQL Server. Focused on reusable UI systems, routing, and
-                                scalable
-                                architecture for multi-client applications.
+                                <strong>Context:</strong> Fuel logistics platform connecting depots and trucking
+                                operations across a distributed network.
+                            </p>
+                            <p>
+                                <strong>Problem:</strong> Needed reusable frontend and backend systems to support
+                                multiple clients and evolving logistics workflows across web and mobile applications.
+                            </p>
+                            <p>
+                                <strong>Contribution:</strong> Built and maintained full-stack features across web and
+                                mobile systems, designed reusable UI and domain components for logistics workflows, and
+                                implemented routing/navigation systems for multi-client usage. Contributed to
+                                architectural decisions focused on scalability and reuse.
+                            </p>
+                            <p>
+                                <strong>Tech:</strong> C#, ASP.NET, Flutter, JavaScript, SQL Server.
                             </p>
                         </div>
                         <iframe src="https://tfn.co.za/our-network/"></iframe>
                     </section>
 
+                    <!-- SECURITYHQ -->
                     <section class="slide">
                         <div class="slide-caption">
-                            <h3>SecurityHQ Risk Platform</h3>
+                            <h3>SecurityHQ Risk Platform (Enterprise System)</h3>
                             <p>
-                                Enterprise risk management system for tracking and mitigating security risks across
-                                organisations. Worked on backend services using Python, PostgreSQL, RabbitMQ, Docker,
-                                and AWS,
-                                and contributed to Angular TypeScript frontend components. Helped design workflows for
-                                risk
-                                analysis, assignment, and mitigation tracking in a greenfield system.
+                                <strong>Context:</strong> Greenfield enterprise risk management system for tracking and
+                                mitigating organisational security risks.
+                            </p>
+                            <p>
+                                <strong>Problem:</strong> Required structured workflows for risk creation, assignment,
+                                tracking, and mitigation across enterprise environments.
+                            </p>
+                            <p>
+                                <strong>Contribution:</strong> Developed backend services for risk workflows,
+                                contributed to Angular frontend components, and helped design system flows for risk
+                                lifecycle management. Worked across event-driven backend processes and integration
+                                layers.
+                            </p>
+                            <p>
+                                <strong>Tech:</strong> Python, PostgreSQL, RabbitMQ, Docker, AWS, Angular.
                             </p>
                         </div>
 
                         <a class="card-link" href="https://www.securityhq.com/risk-management-analytics-platform/"
                             target="_blank">
                             <div class="click-label">Click to open</div>
-
                             <img src="https://morganmoss.github.io/screenshots/sechq.png"
                                 alt="SecurityHQ platform preview" />
-
                             <div class="title">SecurityHQ</div>
                         </a>
                     </section>
 
+                    <!-- PERSONAL PORTFOLIO -->
                     <section class="slide">
                         <div class="slide-caption">
-                            <h3>Personal Portfolio</h3>
+                            <h3>Personal Portfolio (Digital Art Platform)</h3>
                             <p>
-                                Digital art portfolio showcasing illustration work, commissions, and experimental visual
-                                projects.
-                                Built and maintained as a central showcase for freelance artwork across multiple styles
-                                and client
-                                briefs.
+                                <strong>Context:</strong> Central portfolio for digital illustration, commissions, and
+                                experimental visual work.
+                            </p>
+                            <p>
+                                <strong>Problem:</strong> Needed a unified platform to present diverse artwork styles
+                                and manage freelance visibility.
+                            </p>
+                            <p>
+                                <strong>Contribution:</strong> Designed and maintained portfolio structure, managed
+                                client-facing presentation of commissioned work, and iterated on layout for clarity and
+                                usability.
+                            </p>
+                            <p>
+                                <strong>Tech:</strong> Web-based static portfolio and UI iteration.
                             </p>
                         </div>
 
                         <iframe src="https://morganmoss.github.io/"></iframe>
                     </section>
 
+                    <!-- CROW GAME -->
                     <section class="slide">
                         <div class="slide-caption">
-                            <h3>Untitled Crow Game</h3>
+                            <h3>Untitled Crow Game (Game Jam Project)</h3>
                             <p>
-                                Indie game jam project built in Python. Developed core gameplay mechanics, asset
-                                integration,
-                                and simple game loop systems. Focused on experimental design, iteration speed, and
-                                lightweight
-                                architecture for rapid prototyping.
+                                <strong>Context:</strong> Experimental indie game developed during a game jam.
+                            </p>
+                            <p>
+                                <strong>Problem:</strong> Required a playable prototype built under tight iteration
+                                constraints.
+                            </p>
+                            <p>
+                                <strong>Contribution:</strong> Implemented core gameplay loop, integrated assets, and
+                                designed lightweight architecture to support rapid iteration and experimentation.
+                            </p>
+                            <p>
+                                <strong>Tech:</strong> Python game prototype.
                             </p>
                         </div>
 
                         <a class="card-link" href="https://skeleeton.itch.io/untitled-crow-game" target="_blank">
                             <div class="click-label">Click to open</div>
-
                             <img src="https://morganmoss.github.io/screenshots/crowgame.png"
                                 alt="Untitled Crow Game preview" />
-
                             <div class="title">Untitled Crow Game</div>
                         </a>
                     </section>
 
+                    <!-- SARS EFILING -->
                     <section class="slide">
                         <div class="slide-caption">
-                            <h3>SARS eFiling</h3>
+                            <h3>SARS eFiling (Production System)</h3>
                             <p>
-                                Large-scale government tax filing platform supporting production systems and backend
-                                tooling.
-                                Worked with C#, Java, and C across UI and backend components. Focused on debugging
-                                large-scale
-                                log systems, data inconsistency tracing, and building internal tooling for system
-                                diagnostics.
+                                <strong>Context:</strong> Large-scale government tax filing platform operating in
+                                production environments.
+                            </p>
+                            <p>
+                                <strong>Problem:</strong> Complex system required debugging support, logging
+                                diagnostics, and stability improvements across production workloads.
+                            </p>
+                            <p>
+                                <strong>Contribution:</strong> Built internal diagnostic tooling, worked on backend and
+                                UI components, and contributed to tracing and resolving large-scale data inconsistencies
+                                in production systems.
+                            </p>
+                            <p>
+                                <strong>Tech:</strong> C#, Java, C.
                             </p>
                         </div>
 
                         <a class="card-link" href="https://secure.sarsefiling.co.za/landing" target="_blank">
                             <div class="click-label">Click to open</div>
-
                             <img src="https://morganmoss.github.io/screenshots/sars.png" alt="SARS eFiling preview" />
-
                             <div class="title">SARS eFiling</div>
                         </a>
                     </section>
 
+                    <!-- SARS WHATSAPP -->
                     <section class="slide">
                         <div class="slide-caption">
-                            <h3>SARS WhatsApp Integration</h3>
+                            <h3>SARS WhatsApp Integration (Automation System)</h3>
                             <p>
-                                AI-assisted WhatsApp support bot for SARS enabling automated user interaction and query
-                                handling. Built using C#, Java, and C with integration into existing backend systems.
-                                Focused on service design, provider selection, and workflow automation for
-                                messaging-based
-                                support channels.
+                                <strong>Context:</strong> AI-assisted WhatsApp support channel for automated user
+                                interaction.
+                            </p>
+                            <p>
+                                <strong>Problem:</strong> Required automated messaging workflows integrated into
+                                existing enterprise backend systems.
+                            </p>
+                            <p>
+                                <strong>Contribution:</strong> Built integration logic for WhatsApp-based automation,
+                                contributed to service orchestration, and supported backend workflow design for
+                                messaging-based support systems.
+                            </p>
+                            <p>
+                                <strong>Tech:</strong> C#, Java, C.
                             </p>
                         </div>
 
@@ -668,10 +708,8 @@
                             target="_blank">
 
                             <div class="click-label">Click to open</div>
-
                             <img src="https://morganmoss.github.io/screenshots/sarswhatsapp.png"
                                 alt="SARS Whatsapp preview" />
-
                             <div class="title">SARS WhatsApp</div>
 
                         </a>
