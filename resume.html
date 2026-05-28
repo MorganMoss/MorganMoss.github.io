@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Morgan Moss - Software Engineer</title>
+
+    <meta name="description"
+        content="Software Engineer and Systems Architect with experience in Flutter, C#, Python, distributed systems, SQL, backend architecture, frontend development, UX collaboration, and scalable platforms." />
+
+    <meta name="keywords" content="
+  Morgan Moss,
+  Software Engineer,
+  Full Stack Engineer,
+  Systems Architect,
+  Backend Engineer,
+  Frontend Engineer,
+  Flutter,
+  C#,
+  ASP.NET,
+  Python,
+  PostgreSQL,
+  SQL Server,
+  RabbitMQ,
+  Azure,
+  Docker,
+  Java,
+  Angular,
+  Distributed Systems,
+  System Design,
+  Solution Architecture,
+  Remote Developer
+  " />
+
+    <style>
+        .gallery {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            height: 30vh;
+        }
+
+        .slide {
+            flex: 0 0 100%;
+            scroll-snap-align: start;
+            position: relative;
+        }
+
+        /* iframe slides */
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* image card slides */
+        .card-link {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            text-decoration: none;
+            color: white;
+            font-family: sans-serif;
+        }
+
+        .card-link img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.75);
+        }
+
+        /* “Click to open” label */
+        .click-label {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: rgba(0, 0, 0, 0.65);
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 13px;
+            z-index: 2;
+        }
+
+        /* bottom title */
+        .title {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            font-size: 18px;
+            font-weight: 500;
+            z-index: 2;
+        }
+
+        :root {
+            --text: #111;
+            --muted: #666;
+            --border: #ddd;
+            --accent: #000;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Inter, Arial, Helvetica, sans-serif;
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.45;
+            background: white;
+        }
+
+        .page {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 48px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.4rem;
+            line-height: 1.1;
+        }
+
+        h2 {
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.4rem;
+        }
+
+        h3 {
+            margin-bottom: 0.2rem;
+        }
+
+        p {
+            margin-top: 0.4rem;
+        }
+
+        .muted {
+            color: var(--muted);
+        }
+
+        .header {
+            margin-bottom: 2rem;
+        }
+
+        .contact {
+            margin-top: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .job {
+            margin-bottom: 1.8rem;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            border: 1px solid var(--border);
+            padding: 0.3rem 0.6rem;
+            border-radius: 999px;
+            font-size: 0.9rem;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        @media print {
+            body {
+                font-size: 10.5pt;
+                line-height: 1.25;
+                color: #000;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .page {
+                padding: 12mm;
+                max-width: none;
+            }
+
+            h1 {
+                font-size: 22pt;
+                margin-bottom: 4mm;
+            }
+
+            h2 {
+                font-size: 10pt;
+                margin-top: 10mm;
+                padding-bottom: 2mm;
+            }
+
+            h3 {
+                font-size: 11pt;
+                margin-top: 10mm;
+            }
+
+            p {
+                margin: 2mm 0;
+            }
+
+            ul {
+                margin: 2mm 0;
+                padding-left: 4mm;
+            }
+
+            li {
+                margin-bottom: 1mm;
+            }
+
+            .job {
+                margin-bottom: 6mm;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            .header {
+                margin-bottom: 6mm;
+            }
+
+            /* Prevent awkward splits */
+            article {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            /* Skills compact layout for print */
+            .skills {
+                gap: 2mm;
+            }
+
+            .tag {
+                font-size: 8.5pt;
+                padding: 1mm 2mm;
+            }
+
+            a {
+                color: #000;
+                text-decoration: none;
+            }
+
+            @page {
+                margin: 10mm;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="page">
+
+        <header class="header">
+            <h1>Morgan Moss</h1>
+
+            <p>
+                Software Engineer • Systems Architecture • Full Stack Development
+            </p>
+
+            <div class="contact">
+                <div>Cape Town, South Africa</div>
+                <div>Phone: +27 71 869 1665</div>
+                <div>Email: morganpetermoss@gmail.com</div>
+                <div>Website:
+                    <a href="https://morganmoss.github.io/">
+                        morganmoss.github.io
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <h2>Profile</h2>
+
+            <p>
+                Software Engineer with experience designing scalable systems,
+                architecting reusable platforms, and building full-stack applications
+                across mobile, web, and backend infrastructure.
+            </p>
+
+            <p>
+                Strong focus on systems architecture, performance, developer
+                experience, and end-to-end solution design. Experienced with Flutter,
+                C#, Python, SQL-based data modelling, distributed systems, queues,
+                caching strategies, and UI architecture.
+            </p>
+        </section>
+
+        <section>
+            <h2>Skills</h2>
+
+            <div class="skills">
+                <span class="tag">C#</span>
+                <span class="tag">Python</span>
+                <span class="tag">Flutter</span>
+                <span class="tag">ASP.NET</span>
+                <span class="tag">SQL Server</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">RabbitMQ</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Azure</span>
+                <span class="tag">Java</span>
+                <span class="tag">Angular</span>
+                <span class="tag">System Design</span>
+                <span class="tag">Solution Architecture</span>
+                <span class="tag">Full Stack Development</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Experience</h2>
+            <article class="job">
+                <h3>Software Engineer — Code Collective</h3>
+                <div class="muted"> Mar 2024 — Mar 2026 • Remote • Full-time </div>
+                <ul>
+                    <li> Architected and developed reusable frontend and backend systems for TFN's fuel logistics
+                        platform connecting depots and trucking networks across web and mobile applications. </li>
+                    <li> Contributed to infrastructure and platform tooling supporting over 500 million litres of fuel
+                        transactions during 2025. </li>
+                    <li> Designed and implemented a shared Flutter component ecosystem for maps, depot discovery, route
+                        planning, product handling, and trip organisation used across multiple applications. </li>
+                    <li> Built a bespoke Flutter routing engine to replace standard routing packages, now used across
+                        the organisation's mobile and web UI clients. </li>
+                    <li> Developed a template-driven PDF and Excel document generation platform using C#, enabling fully
+                        featured reporting and print workflows from reusable templates. </li>
+                    <li> Helped establish and expand an internal UI component and design system to improve development
+                        consistency, maintainability, and delivery speed across teams. </li>
+                    <li> Collaborated closely with UX designers and developers to create scalable, reusable interfaces
+                        focused on usability and rapid feature development. </li>
+                    <li> Worked extensively on integration and modernisation efforts across existing infrastructure and
+                        services. </li>
+                </ul>
+            </article>
+            <article class="job">
+                <h3>Software Engineer — BBD</h3>
+                <div class="muted"> Jan 2023 — Mar 2024 • Hybrid • Full-time </div>
+                <ul>
+                    <li> Supported and maintained SARS government systems, building internal tooling and diagnostics for
+                        investigating large-scale logging inconsistencies and production issues. </li>
+                    <li> Contributed to the development of an AI-driven WhatsApp support chatbot for SARS using C#,
+                        Java, and C. </li>
+
+                    <li>
+                        Joined a small multidisciplinary team working on a greenfield enterprise
+                        risk management platform, helping bring the product from concept to a
+                        production-ready release within approximately 6 months.
+                    </li>
+
+                    <li>
+                        Developed major backend systems for organising, analysing, and tracking
+                        enterprise security risks and mitigation workflows using Python,
+                        PostgreSQL, RabbitMQ, Docker, and AWS infrastructure.
+                    </li>
+
+                    <li>
+                        Contributed across the full stack, including backend services, API design,
+                        database architecture, and Angular TypeScript frontend development.
+                    </li>
+
+
+                </ul>
+            </article>
+            <article class="job">
+                <h3>Freelance Digital Artist — Raveress_Moss</h3>
+                <div class="muted"> Jan 2020 — Present • Remote • Freelance </div>
+                <ul>
+                    <li> Delivered over 100 commissioned illustrations for independent clients across a variety of
+                        styles and subjects. </li>
+                    <li> Managed all aspects of freelance work including client communication, project scoping,
+                        scheduling, revisions, delivery, and portfolio management. </li>
+                    <li> Maintained a consistent independent income stream through commissioned artwork while studying
+                        and during early career development. </li>
+                    <li> Built and maintained an online portfolio showcasing digital art, personal projects, and
+                        experimental game development work. </li>
+                    <li> Developed strong communication, iterative design, and self-management skills through long-term
+                        independent client collaboration. </li>
+                </ul>
+            </article>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            <div class="gallery">
+
+                <!-- TFN (iframe OK) -->
+                <section class="slide">
+                    <iframe src="https://tfn.co.za/our-network/"></iframe>
+                </section>
+
+                <!-- Portfolio (iframe OK) -->
+                <section class="slide">
+                    <iframe src="https://morganmoss.github.io/"></iframe>
+                </section>
+                <!-- Untitled Crow Game (use image fallback) -->
+                <section class="slide">
+                    <a class="card-link" href="https://skeleeton.itch.io/untitled-crow-game" target="_blank">
+
+                        <div class="click-label">Click to open</div>
+
+                        <img src="screenshots/crowgame.png" alt="Untitled Crow Game preview" />
+
+                        <div class="title">Untitled Crow Game</div>
+                    </a>
+                </section>
+
+                <!-- SecurityHQ (blocked iframe → image fallback) -->
+                <section class="slide">
+                    <a class="card-link" href="https://www.securityhq.com/risk-management-analytics-platform/"
+                        target="_blank">
+
+                        <div class="click-label">Click to open</div>
+
+                        <img src="screenshots/sechq.png" alt="SecurityHQ platform preview" />
+
+                        <div class="title">SecurityHQ</div>
+                    </a>
+                </section>
+
+                <!-- SARS (blocked iframe → image fallback) -->
+                <section class="slide">
+                    <a class="card-link" href="https://secure.sarsefiling.co.za/landing" target="_blank">
+
+                        <div class="click-label">Click to open</div>
+
+                        <img src="screenshots/sars.png" alt="SARS eFiling preview" />
+
+                        <div class="title">SARS eFiling</div>
+                    </a>
+                </section>
+
+                <!-- SARS (blocked iframe → image fallback) -->
+                <section class="slide">
+                    <a class="card-link"
+                        href="https://www.sars.gov.za/latest-news/sars-launched-a-self-service-whatsapp-channel/"
+                        target="_blank">
+
+                        <div class="click-label">Click to open</div>
+
+                        <img src="screenshots/sarswhatsapp.png" alt="SARS Whatsapp preview" />
+
+                        <div class="title">SARS Whatsapp</div>
+                    </a>
+                </section>
+            </div>
+
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <article class="job">
+                <h3>BBD Software Graduate Programme</h3>
+                <div class="muted"> 2023 • Part-time </div>
+                <p> Completed BBD's graduate engineering programme focused on practical software development, cloud
+                    infrastructure, DevOps practices, and collaborative delivery workflows. </p>
+                <p> Worked across multiple projects and technologies including backend services, frontend development,
+                    databases, containerisation, and AWS deployment tooling while strengthening software engineering
+                    fundamentals in production-oriented environments. </p>
+            </article>
+            <article class="job">
+                <h3>WeThinkCode_</h3>
+
+                <div class="muted">
+                    National Diploma in Software Development • 2021 — 2022
+                </div>
+
+                <p>
+                    Intensive software college course focused on practical,
+                    project-driven development across backend systems, algorithms,
+                    infrastructure, databases, and collaborative engineering workflows.
+                </p>
+
+                <p>
+                    Graduated as the top-performing student of the cohort and received the
+                    peer-voted Alchemist Award for technical excellence, problem solving,
+                    and collaboration.
+                </p>
+            </article>
+
+            <article class="job">
+                <h3>University of South Africa (UNISA)</h3>
+
+                <div class="muted">
+                    BSc Computer Science — Incomplete • 2020 — 2022
+                </div>
+
+                <p>
+                    Studied computer science and mathematics alongside full-time technical
+                    training, with strong focus on algorithms, low-level systems,
+                    computation theory, calculus, and software engineering fundamentals.
+                </p>
+
+                <p>
+                    Achieved distinctions in most completed modules and later tutored
+                    first- and second-year mathematics and computer science subjects.
+                </p>
+            </article>
+        </section>
+
+    </main>
+</body>
+
+</html>
