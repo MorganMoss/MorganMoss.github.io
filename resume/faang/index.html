@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Morgan Moss - Software Engineer</title>
+    <style>
+        body {
+            font-family: Inter, Arial, sans-serif;
+            margin: 0;
+            color: #111;
+            line-height: 1.4;
+            background: white;
+        }
+
+        .page {
+            max-width: 860px;
+            margin: auto;
+            padding: 34px;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 12px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 4px;
+            margin-top: 22px;
+            letter-spacing: 1px;
+        }
+
+        .contact {
+            font-size: 13px;
+            color: #555;
+            margin-top: 6px;
+        }
+
+        .contact a {
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #aaa;
+        }
+
+        .contact a:hover {
+            color: #000;
+            border-bottom: 1px solid #000;
+        }
+
+        .role {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+        }
+
+        .meta {
+            font-size: 13px;
+            color: #666;
+            font-weight: normal;
+        }
+
+        ul {
+            margin: 6px 0 0 18px;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .skills {
+            font-size: 14px;
+            color: #222;
+            line-height: 1.5;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .grid div {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .job {
+            margin-top: 16px;
+        }
+
+        .project-context {
+            font-style: italic;
+            color: #444;
+            font-size: 13.5px;
+            margin-top: 4px;
+            display: block;
+        }
+
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .page {
+                padding: 18px;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+                border-bottom: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- HEADER -->
+        <section>
+            <h1>Morgan Moss</h1>
+            <div class="contact">
+                Cape Town, South Africa • morganpetermoss@gmail.com • +27 71 869 1665<br>
+                <a href="https://morganmoss.github.io/resume/" target="_blank">morganmoss.github.io/resume</a>
+            </div>
+        </section>
+
+        <!-- SUMMARY -->
+        <section>
+            <h2>Summary</h2>
+            <p style="font-size: 14px; margin: 6px 0 0 0;">
+                Software Engineer specializing in distributed systems, platform engineering, and event-driven
+                architectures.
+                Experience engineering high-volume logistics and enterprise platforms with a strict focus on
+                scalability,
+                reliability, observability, and performance optimization.
+            </p>
+        </section>
+
+        <!-- IMPACT -->
+        <section>
+            <h2>Impact</h2>
+            <div class="grid">
+                <div>
+                    <b style="font-size: 16px;">168k+</b><br>
+                    monthly transactions
+                </div>
+                <div>
+                    <b style="font-size: 16px;">42M+</b><br>
+                    monthly system volume
+                </div>
+                <div>
+                    <b style="font-size: 16px;">270+</b><br>
+                    suppliers supported
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section>
+            <h2>Technical Skills</h2>
+            <p class="skills" style="margin: 6px 0 0 0;">
+                <b>Languages:</b> C#, Python, Java •
+                <b>Backend:</b> ASP.NET, REST APIs, SQL Server, PostgreSQL<br>
+                <b>Distributed Systems:</b> RabbitMQ, Event-Driven Architecture •
+                <b>Frontend:</b> Flutter, Angular<br>
+                <b>Infrastructure:</b> Docker, Azure, CI/CD Pipelines •
+                <b>Concepts:</b> System Design, Scalability, Observability
+            </p>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section>
+            <h2>Experience</h2>
+
+            <!-- CODE COLLECTIVE -->
+            <div class="job">
+                <div class="role">
+                    <span>Software Engineer — Code Collective</span>
+                    <span class="meta">Mar 2024 – Mar 2026</span>
+                </div>
+                <span class="project-context">Core Platform Team / TFN Logistics Platform (C#, Flutter, SQL
+                    Server)</span>
+                <ul>
+                    <li>
+                        Architected reusable platform components across core logistics infrastructure, eliminating
+                        duplicate engineering overhead across multiple production applications.
+                    </li>
+                    <li>
+                        Scaled and optimized production performance for a logistics platform handling 168k+ monthly
+                        transactions and 42M+ monthly system volume.
+                    </li>
+                    <li>
+                        Reduced reporting data latency from 2–5 seconds to &lt;10ms by redesigning a C# template-based
+                        processing pipeline.
+                    </li>
+                    <li>
+                        Built a standardized Flutter UI/component framework to unify mobile logistics and operational
+                        tracking workflows across internal operator applications.
+                    </li>
+                    <li>
+                        Implemented an internal routing and navigation engine supporting multi-module enterprise
+                        applications with shared state management.
+                    </li>
+                    <li>
+                        Engineered and automated CI/CD deployment pipelines, reducing release friction and production
+                        incident failure rates.
+                    </li>
+                    <li>
+                        Improved distributed system observability and minimized MTTR by embedding structured diagnostics
+                        and logging tools across core services.
+                    </li>
+                    <li>
+                        Operated within a focused 3-person platform subteam responsible for system architecture,
+                        internal tooling, and engineering documentation guidelines.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- BBD -->
+            <div class="job">
+                <div class="role">
+                    <span>Software Engineer — BBD</span>
+                    <span class="meta">Jan 2023 – Mar 2024</span>
+                </div>
+                <span class="project-context">Enterprise Risk Platform / SecurityHQ (Python, Angular, RabbitMQ)</span>
+                <ul>
+                    <li>
+                        Built event-driven backend services using Python, PostgreSQL, and RabbitMQ to process
+                        asynchronous enterprise risk analytics workflows.
+                    </li>
+                    <li>
+                        Designed message-based architecture decoupling ingestion, processing, and analytics pipelines,
+                        improving overall system modularity and fault isolation.
+                    </li>
+                    <li>
+                        Developed responsive Angular frontend features and state management for risk management
+                        interfaces used by operational analysts.
+                    </li>
+                    <li>
+                        Enhanced production system reliability by introducing structured logging frameworks and
+                        traceable request context flows across distributed services.
+                    </li>
+                    <li>
+                        Maintained CI/CD pipelines and executed production diagnostics for high-stakes enterprise and
+                        government systems (SARS compliance tooling).
+                    </li>
+                    <li>
+                        Developed prototype integrations and experimental automation workflows utilizing C#, Java, and C
+                        environments.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section>
+            <h2>Education</h2>
+            <div class="job">
+                <div class="role">
+                    <span>WeThinkCode_</span>
+                    <span class="meta">Diploma, Software Development</span>
+                </div>
+                <ul>
+                    <li>Top Performer Award • Alchemist Award (peer voted)</li>
+                </ul>
+            </div>
+
+            <div class="job" style="margin-top: 8px;">
+                <div class="role">
+                    <span>University of South Africa (UNISA)</span>
+                    <span class="meta">BSc Computer Science (Incomplete)</span>
+                </div>
+                <ul>
+                    <li>Tutored mathematics and computer science modules</li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+
+</html>
