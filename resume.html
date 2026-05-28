@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Morgan Moss - Software Engineer</title>
-
+    <link rel="icon" type="image/png"
+        href="https://lh3.googleusercontent.com/a/ACg8ocJGKX4sQb07XaBpGFejwERCykzbcAZyw0acsI6CBtVR8J9z_oN1=s360-c-no">
     <meta name="description"
         content="Software Engineer and Systems Architect with experience in Flutter, C#, Python, distributed systems, SQL, backend architecture, frontend development, UX collaboration, and scalable platforms." />
 
@@ -70,8 +71,9 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: top;
             display: block;
-            filter: brightness(0.75);
+            filter: brightness(0.85);
         }
 
         /* “Click to open” label */
@@ -189,6 +191,90 @@
             text-decoration: none;
         }
 
+        .gallery-wrapper {
+            position: relative;
+        }
+
+        .gallery {
+            overflow: hidden;
+            /* replace scroll bar behavior */
+            display: flex;
+        }
+
+        .gallery-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 5;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            width: 36px;
+            height: 48px;
+            cursor: pointer;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-btn.left {
+            left: 8px;
+        }
+
+        .gallery-btn.right {
+            right: 8px;
+        }
+
+        .gallery-btn:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .slide {
+            flex: 0 0 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* text block */
+        .slide-content {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            background: #fff;
+        }
+
+        .slide-content h3 {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .slide-content p {
+            margin: 4px 0 0;
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        /* media fills remaining space */
+        .slide-media,
+        .card-link,
+        iframe {
+            flex: 1;
+            width: 100%;
+        }
+
+        iframe {
+            height: 100%;
+            border: 0;
+        }
+
+        .card-link img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
         @media print {
             body {
                 font-size: 10.5pt;
@@ -265,6 +351,10 @@
 
             @page {
                 margin: 10mm;
+            }
+
+            #projects {
+                display: none !important;
             }
         }
     </style>
@@ -401,72 +491,145 @@
             </article>
         </section>
 
-        <section>
+        <section id="projects">
             <h2>Projects</h2>
-            <div class="gallery">
 
-                <!-- TFN (iframe OK) -->
-                <section class="slide">
-                    <iframe src="https://tfn.co.za/our-network/"></iframe>
-                </section>
+            <div class="gallery-wrapper">
+                <button class="gallery-btn left" aria-label="Previous project">‹</button>
 
-                <!-- Portfolio (iframe OK) -->
-                <section class="slide">
-                    <iframe src="https://morganmoss.github.io/"></iframe>
-                </section>
-                <!-- Untitled Crow Game (use image fallback) -->
-                <section class="slide">
-                    <a class="card-link" href="https://skeleeton.itch.io/untitled-crow-game" target="_blank">
+                <div class="gallery">
 
-                        <div class="click-label">Click to open</div>
+                    <section class="slide">
+                        <div class="slide-caption">
+                            <h3>TFN Network</h3>
+                            <p>
+                                Fuel logistics platform connecting depots and trucking operations across a distributed
+                                network.
+                                Built and maintained full-stack components across web and mobile systems using C#,
+                                ASP.NET,
+                                Flutter, JavaScript, and SQL Server. Focused on reusable UI systems, routing, and
+                                scalable
+                                architecture for multi-client applications.
+                            </p>
+                        </div>
+                        <iframe src="https://tfn.co.za/our-network/"></iframe>
+                    </section>
 
-                        <img src="screenshots/crowgame.png" alt="Untitled Crow Game preview" />
+                    <section class="slide">
+                        <div class="slide-caption">
+                            <h3>SecurityHQ Risk Platform</h3>
+                            <p>
+                                Enterprise risk management system for tracking and mitigating security risks across
+                                organisations. Worked on backend services using Python, PostgreSQL, RabbitMQ, Docker,
+                                and AWS,
+                                and contributed to Angular TypeScript frontend components. Helped design workflows for
+                                risk
+                                analysis, assignment, and mitigation tracking in a greenfield system.
+                            </p>
+                        </div>
 
-                        <div class="title">Untitled Crow Game</div>
-                    </a>
-                </section>
+                        <a class="card-link" href="https://www.securityhq.com/risk-management-analytics-platform/"
+                            target="_blank">
+                            <div class="click-label">Click to open</div>
 
-                <!-- SecurityHQ (blocked iframe → image fallback) -->
-                <section class="slide">
-                    <a class="card-link" href="https://www.securityhq.com/risk-management-analytics-platform/"
-                        target="_blank">
+                            <img src="https://morganmoss.github.io/screenshots/sechq.png"
+                                alt="SecurityHQ platform preview" />
 
-                        <div class="click-label">Click to open</div>
+                            <div class="title">SecurityHQ</div>
+                        </a>
+                    </section>
 
-                        <img src="screenshots/sechq.png" alt="SecurityHQ platform preview" />
+                    <section class="slide">
+                        <div class="slide-caption">
+                            <h3>Personal Portfolio</h3>
+                            <p>
+                                Digital art portfolio showcasing illustration work, commissions, and experimental visual
+                                projects.
+                                Built and maintained as a central showcase for freelance artwork across multiple styles
+                                and client
+                                briefs.
+                            </p>
+                        </div>
 
-                        <div class="title">SecurityHQ</div>
-                    </a>
-                </section>
+                        <iframe src="https://morganmoss.github.io/"></iframe>
+                    </section>
 
-                <!-- SARS (blocked iframe → image fallback) -->
-                <section class="slide">
-                    <a class="card-link" href="https://secure.sarsefiling.co.za/landing" target="_blank">
+                    <section class="slide">
+                        <div class="slide-caption">
+                            <h3>Untitled Crow Game</h3>
+                            <p>
+                                Indie game jam project built in Python. Developed core gameplay mechanics, asset
+                                integration,
+                                and simple game loop systems. Focused on experimental design, iteration speed, and
+                                lightweight
+                                architecture for rapid prototyping.
+                            </p>
+                        </div>
 
-                        <div class="click-label">Click to open</div>
+                        <a class="card-link" href="https://skeleeton.itch.io/untitled-crow-game" target="_blank">
+                            <div class="click-label">Click to open</div>
 
-                        <img src="screenshots/sars.png" alt="SARS eFiling preview" />
+                            <img src="https://morganmoss.github.io/screenshots/crowgame.png"
+                                alt="Untitled Crow Game preview" />
 
-                        <div class="title">SARS eFiling</div>
-                    </a>
-                </section>
+                            <div class="title">Untitled Crow Game</div>
+                        </a>
+                    </section>
 
-                <!-- SARS (blocked iframe → image fallback) -->
-                <section class="slide">
-                    <a class="card-link"
-                        href="https://www.sars.gov.za/latest-news/sars-launched-a-self-service-whatsapp-channel/"
-                        target="_blank">
+                    <section class="slide">
+                        <div class="slide-caption">
+                            <h3>SARS eFiling</h3>
+                            <p>
+                                Large-scale government tax filing platform supporting production systems and backend
+                                tooling.
+                                Worked with C#, Java, and C across UI and backend components. Focused on debugging
+                                large-scale
+                                log systems, data inconsistency tracing, and building internal tooling for system
+                                diagnostics.
+                            </p>
+                        </div>
 
-                        <div class="click-label">Click to open</div>
+                        <a class="card-link" href="https://secure.sarsefiling.co.za/landing" target="_blank">
+                            <div class="click-label">Click to open</div>
 
-                        <img src="screenshots/sarswhatsapp.png" alt="SARS Whatsapp preview" />
+                            <img src="https://morganmoss.github.io/screenshots/sars.png" alt="SARS eFiling preview" />
 
-                        <div class="title">SARS Whatsapp</div>
-                    </a>
-                </section>
+                            <div class="title">SARS eFiling</div>
+                        </a>
+                    </section>
+
+                    <section class="slide">
+                        <div class="slide-caption">
+                            <h3>SARS WhatsApp Integration</h3>
+                            <p>
+                                AI-assisted WhatsApp support bot for SARS enabling automated user interaction and query
+                                handling. Built using C#, Java, and C with integration into existing backend systems.
+                                Focused on service design, provider selection, and workflow automation for
+                                messaging-based
+                                support channels.
+                            </p>
+                        </div>
+
+                        <a class="card-link"
+                            href="https://www.sars.gov.za/latest-news/sars-launched-a-self-service-whatsapp-channel/"
+                            target="_blank">
+
+                            <div class="click-label">Click to open</div>
+
+                            <img src="https://morganmoss.github.io/screenshots/sarswhatsapp.png"
+                                alt="SARS Whatsapp preview" />
+
+                            <div class="title">SARS WhatsApp</div>
+
+                        </a>
+                    </section>
+
+                </div>
+
+                <button class="gallery-btn right" aria-label="Next project">›</button>
             </div>
-
         </section>
+
 
         <section>
             <h2>Education</h2>
@@ -521,5 +684,107 @@
 
     </main>
 </body>
+
+<script>
+    const gallery = document.querySelector('.gallery');
+    const slides = document.querySelectorAll('.slide');
+
+    let index = 0;
+
+    function update() {
+        const width = gallery.clientWidth;
+        gallery.scrollTo({
+            left: width * index,
+            behavior: 'smooth'
+        });
+    }
+
+    document.querySelector('.gallery-btn.left').addEventListener('click', () => {
+        index = Math.max(0, index - 1);
+        update();
+    });
+
+    document.querySelector('.gallery-btn.right').addEventListener('click', () => {
+        index = Math.min(slides.length - 1, index + 1);
+        update();
+    });
+
+    window.addEventListener('resize', update);
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Morgan Moss",
+  "url": "https://morganmoss.github.io/",
+  "jobTitle": [
+    "Software Engineer",
+    "Systems Architect",
+    "Full Stack Engineer"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Cape Town",
+    "addressCountry": "ZA"
+  },
+  "worksFor": [
+    {
+      "@type": "Organization",
+      "name": "Code Collective"
+    }
+  ],
+  "alumniOf": [
+    {
+      "@type": "EducationalOrganization",
+      "name": "WeThinkCode_"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "name": "University of South Africa"
+    }
+  ],
+  "knowsAbout": [
+    "Systems Architecture",
+    "Distributed Systems",
+    "Backend Engineering",
+    "Full Stack Development",
+    "Solution Architecture",
+    "C#",
+    ".NET",
+    "ASP.NET",
+    "Python",
+    "Java",
+    "Flutter",
+    "Angular",
+    "JavaScript",
+    "TypeScript",
+    "SQL Server",
+    "PostgreSQL",
+    "RabbitMQ",
+    "Docker",
+    "Azure",
+    "API Design",
+    "Data Modelling",
+    "Performance Optimisation",
+    "UI Component Systems",
+    "Routing Systems"
+  ],
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": "Software Engineer",
+    "occupationLocation": {
+      "@type": "City",
+      "name": "Cape Town"
+    },
+    "skills": [
+      "Backend Development",
+      "System Design",
+      "Cloud Infrastructure",
+      "Frontend Development"
+    ]
+  }
+}
+</script>
 
 </html>
